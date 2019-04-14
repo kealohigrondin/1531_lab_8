@@ -1,0 +1,17 @@
+<!-- Complete this section 
+
+    Display a confirmation message and the booking details
+
+    The page should contain a link to the home page 
+    (try using {% extends %} and {% block %} tags)
+-->
+{% extends base.html %}
+{% block body %}
+<body>
+<h1>Booking Confirmed!</h1>
+Made by Customer {{ customer }} </br>
+Reserve {{ car }} for {{ duration }} days </br>
+Locations: {{ locations }} </br>
+Total fee: {{ fee }}
+</body>
+{% endblock %}

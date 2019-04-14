@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block body %}
+<img src="https://easydrawingguides-7512.kxcdn.com/wp-content/uploads/2017/01/How-to-Draw-a-cartoon-car-20.png" width="100px" height="100px"/>
+
+<br/>
+
+<div>
+  <h2>{{car}}</h2>
+</div>
+
+
+<!--
+Here are some HTML tags you might find useful:
+
+  Form:               <form method="POST"></form>
+  Input field:        <input name="field_name" value="placeholder string"/>
+  Readonly field:     ??? (figure it out yourself)
+
+  Section:            <div></div>
+  Newline:            <br>
+  Red text:           <font size="3" color="red">ERROR MESSAGE</font> 
+  Submit button:      <button name="button_name" type="submit">Say Hi!</button>
+-->
+
+<!--
+{% raw %} This tag is to prevent Jinja from converting any of the Jinja templates below
+
+Here are some Jinja templates you might find useful:
+
+  1. Printing a variable:                       {{variable}}
+  2. If statement to check if variable exists:  {% if var %} ... {% endif %}
+  3. If statement with multiple conditions:     {% if var and var.name == 'Isaac' %}
+  4. If-Else statement:                         ???
+  5. For loop:                                  {% for booking in bookings %} ... {% endfor %}
+  6. Advanced features that may be useful for cleaner Jinja templating: 
+        {% macro %}, {% block %}, more at http://jinja.pocoo.org/docs/2.10/templates/
+
+{% endraw %}
+-->
+
+<div>
+  <form method="POST">
+    <input name='Customer Name' type="text"/>Customer Name
+    </br>
+    <font size="3" color="red">{{customer_name_error}}</font> 
+    </br>
+    <input name='Customer License' type="text"/>Customer License
+    </br>
+    <font size="3" color="red">{{customer_license_error}}</font> 
+    </br>
+
+
+    <input name='Start Location' type="text"/>Start Location
+    </br>
+    <font size="3" color="red">{{start_location_error}}</font> 
+    </br>
+    <input name='End Location' type="text"/>End Location
+    </br>
+
+
+    <font size="3" color="red">{{end_location_error}}</font> 
+    </br>
+    <input name='Start Date' type="date"/>Start Date
+    </br>
+    <font size="3" color="red">{{start_date_error}}</font> 
+    </br>
+    <input name='End Date' type="date"/>End Date
+    </br>
+    <font size="3" color="red">{{end_date_error}}</font> 
+    </br>
+
+    <input type="submit" name="submitButton" value="Check Booking">
+    <button>Cancel</button>
+  </br>
+      {% if fee != 0 %}
+        <p>"Fee: ${{ fee }}</p>
+      {{ endif }}
+  </form>
+<!-- 
+  Complete this section
+-->
+</div>
+{% endblock %}
